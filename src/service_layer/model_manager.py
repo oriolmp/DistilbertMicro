@@ -1,7 +1,10 @@
+"""Model initialization and consumption"""
+
 from typing import Dict, Tuple
 
 import torch
-from transformers import DistilBertForSequenceClassification, DistilBertTokenizer
+from transformers import (DistilBertForSequenceClassification,
+                          DistilBertTokenizer)
 
 from src.domain.exceptions import IncompleteConfiguration, MissingConfiguration
 
@@ -29,7 +32,10 @@ class ModelManager:
 
     @staticmethod
     def parse_configuration(config: Dict) -> Tuple[Dict, Dict]:
-        """Checks if all necessary configuration is set. If all is correct, return tokenizer and model config"""
+        """
+        Checks if all necessary configuration is set.
+        If all is correct, return tokenizer and model config
+        """
 
         if not config:
             raise MissingConfiguration("Ensure config.yml file is created.")

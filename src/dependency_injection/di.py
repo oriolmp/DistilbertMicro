@@ -1,11 +1,13 @@
-"""Containers module."""
+"""Define all dependencies using dependency injection"""
 
+# pylint: disable=c-extension-no-member, too-few-public-methods
 from dependency_injector import containers, providers
 
 from src.service_layer.model_manager import ModelManager
 
 
 class Container(containers.DeclarativeContainer):
+    """Container class with app resources"""
 
     wiring_config: containers.WiringConfiguration = containers.WiringConfiguration(
         modules=["src.entrypoints.rest.api"]

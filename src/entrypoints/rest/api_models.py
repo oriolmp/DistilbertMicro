@@ -1,3 +1,5 @@
+"""API request and responde models definition"""
+
 from typing import Literal, Tuple
 
 from pydantic import BaseModel, Field

@@ -15,15 +15,10 @@ The project is managed using Poetry and contains the following:
 * **Dockerfile**: used to build the docker image
 * **app-deployment.yaml and app-service.yaml**: necessary file to deploy to kubernetes
 
-The following guidelines have been followed:
-* *App dependency*: managed using depenency injection
-* Code style 
-
-
-## App description
-
-The app provides a FastAPI with an endpoint to analyze text.
-
+App carachteristics:
+* **App dependencies**: managed using depenency injection
+* **Code style**: Black, Isort and PyLint
+* **Testing**: 94% with pytest 
 
 
 ---
@@ -47,7 +42,7 @@ If you want to run the application locally, follow the next steps:
     ```
     Now you can access to http://127.0.0.1:8000/docs# and see the API docs.
 
-4. **Call the API** To predict a text sentiment, you can make an API call using curl
+4. **Call the API** To predict a text sentiment, you can interact with the Swagger interface or can make an API call using curl
     ```
     curl -X 'POST' \
     'http://127.0.0.1:8000/predict_sentiment' \
@@ -91,4 +86,7 @@ If you want to run the application locally, follow the next steps:
     kubectl apply -f app-service.yaml
     ```
 
+## AWS considerations
+ * Be aware of the security groups of your cluster and Application Load Balancer the app is not reachable
+ * 
 

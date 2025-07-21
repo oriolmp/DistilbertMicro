@@ -1,6 +1,7 @@
-from src.entrypoints.cli import app
-from httpx import ASGITransport, AsyncClient
 import pytest_asyncio
+from httpx import ASGITransport, AsyncClient
+
+from src.entrypoints.cli import app
 
 # @containers.override(Container)
 # class OverridingContainer(containers.DeclarativeContainer):
@@ -15,4 +16,3 @@ async def client():
         base_url="http://test",
     ) as client:
         yield client
-

@@ -1,5 +1,7 @@
 """Application module."""
 
+# pylint: disable=redefined-outer-name
+
 from fastapi import FastAPI
 
 from src.dependency_injection.di import Container
@@ -7,6 +9,8 @@ from src.entrypoints.rest.api import router
 
 
 def create_app() -> FastAPI:
+    """Creates FastAPI app and initilize resources"""
+
     container = Container()
 
     app = FastAPI()
