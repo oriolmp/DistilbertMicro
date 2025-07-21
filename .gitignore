@@ -1,0 +1,6 @@
+.venv/
+.git/
+.env
+.coverage
+**/__pycache__/
+.pytest_cache/
